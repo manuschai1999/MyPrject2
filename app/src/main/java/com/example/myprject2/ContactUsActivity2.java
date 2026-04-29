@@ -11,28 +11,27 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    Button nextButton;
+public class ContactUsActivity2 extends AppCompatActivity {
+    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact_us2);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        nextButton = findViewById(R.id.button);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        backButton = findViewById(R.id.button2);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent contactus = new Intent(getApplicationContext(),ContactUsActivity2.class);
+                Intent contactus = new Intent(getApplicationContext(),AddNoteActivity.class);
                 startActivity(contactus);
 
             }
         });
-        }
-
     }
+}
